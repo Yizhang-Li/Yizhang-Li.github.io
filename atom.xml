@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://yizhang-li.github.io./"/>
   <updated>2019-03-05T06:15:00.319Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://yizhang-li.github.io./</id>
   
   <author>
     <name>Yizhang Li</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Summarize Factor Momentum Everywhere</title>
-    <link href="http://yoursite.com/2019/03/05/Summarize%20Factor%20Momentum%20Everywhere/"/>
-    <id>http://yoursite.com/2019/03/05/Summarize Factor Momentum Everywhere/</id>
+    <link href="http://yizhang-li.github.io./2019/03/05/Summarize%20Factor%20Momentum%20Everywhere/"/>
+    <id>http://yizhang-li.github.io./2019/03/05/Summarize Factor Momentum Everywhere/</id>
     <published>2019-03-05T06:40:57.000Z</published>
     <updated>2019-03-05T06:15:00.319Z</updated>
     
@@ -34,10 +34,10 @@
     
     </summary>
     
-      <category term="Paper Review" scheme="http://yoursite.com/categories/Paper-Review/"/>
+      <category term="Paper Review" scheme="http://yizhang-li.github.io./categories/Paper-Review/"/>
     
     
-      <category term="Empirical Asset Pricing" scheme="http://yoursite.com/tags/Empirical-Asset-Pricing/"/>
+      <category term="Empirical Asset Pricing" scheme="http://yizhang-li.github.io./tags/Empirical-Asset-Pricing/"/>
     
   </entry>
   

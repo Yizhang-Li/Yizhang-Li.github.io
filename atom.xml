@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-05T04:55:32.522Z</updated>
+  <updated>2019-03-05T05:01:39.338Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/01/19/Overnight_vs_Intraday_AShares/"/>
     <id>http://yoursite.com/2019/01/19/Overnight_vs_Intraday_AShares/</id>
     <published>2019-01-19T06:40:57.000Z</published>
-    <updated>2019-03-05T04:55:32.522Z</updated>
+    <updated>2019-03-05T05:01:39.338Z</updated>
     
     <summary type="html">
     
@@ -30,7 +30,7 @@
         
 
 	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;./Ovsl/A_Tug_of_War_Overnight_Versus_Intraday_Expected_Returns_in_China_AShares_Market.pdf&quot; width=&quot;100%
+		&lt;iframe src=&quot;https://drive.google.com/file/d/1hGMnIy4ypC_rcunq-nlzL5nCpsETiVK5/view?usp=sharing&quot; style=&quot;width:100%; h
       
     
     </summary>

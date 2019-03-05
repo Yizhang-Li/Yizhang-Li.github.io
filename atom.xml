@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-05T05:01:39.338Z</updated>
+  <updated>2019-03-05T06:11:59.365Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,30 +17,27 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Overnight-vs-Intraday Factor Return Pattern in China A-Shares</title>
-    <link href="http://yoursite.com/2019/01/19/Overnight_vs_Intraday_AShares/"/>
-    <id>http://yoursite.com/2019/01/19/Overnight_vs_Intraday_AShares/</id>
-    <published>2019-01-19T06:40:57.000Z</published>
-    <updated>2019-03-05T05:01:39.338Z</updated>
+    <title>Summarize Factor Momentum Everywhere</title>
+    <link href="http://yoursite.com/2019/03/05/Summarize%20Factor%20Momentum%20Everywhere/"/>
+    <id>http://yoursite.com/2019/03/05/Summarize Factor Momentum Everywhere/</id>
+    <published>2019-03-05T06:40:57.000Z</published>
+    <updated>2019-03-05T06:11:59.365Z</updated>
     
     <summary type="html">
     
       
       
-        
-
-	&lt;div class=&quot;row&quot;&gt;
-		&lt;iframe src=&quot;https://drive.google.com/file/d/1hGMnIy4ypC_rcunq-nlzL5nCpsETiVK5/view?usp=sharing&quot; style=&quot;width:100%; h
+        &lt;h2 id=&quot;Summary&quot;&gt;&lt;a href=&quot;#Summary&quot; class=&quot;headerlink&quot; title=&quot;Summary&quot;&gt;&lt;/a&gt;Summary&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Factor Momentum exists.&lt;/li&gt;
+&lt;li&gt;FM Portfoli
       
     
     </summary>
     
-      <category term="Paper Replication" scheme="http://yoursite.com/categories/Paper-Replication/"/>
+      <category term="Paper Review" scheme="http://yoursite.com/categories/Paper-Review/"/>
     
     
       <category term="Empirical Asset Pricing" scheme="http://yoursite.com/tags/Empirical-Asset-Pricing/"/>
-    
-      <category term="China A-Shares" scheme="http://yoursite.com/tags/China-A-Shares/"/>
     
   </entry>
   

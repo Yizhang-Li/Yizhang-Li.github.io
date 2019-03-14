@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Summarize The short of it]]></title>
+    <url>%2F2019%2F03%2F14%2FSummarize%20The%20Short%20of%20it%2F</url>
+    <content type="text"><![CDATA[Main Results Investor sentiment contains a market-wide component Influence prices on securities in the same direction at the same time Short selling as the major obstacle to eliminating sentiment-driven mispricing. Hypothesis 1 Anomalies should be stronger following high sentiment. (Short-Sell problem) Intuition: During low-sentiment periods, most optimistic views are from rational investors. 70% of adjusted profits from a L/S occur in months following levels of investor sentiment above its median value. Hypothesis 2 Profits from the short leg should be greater when sentiment is high, and the stocks in the short leg are relatively overpriced compared to the stocks in the long leg. 78% of the adjusted profits from shorting that leg occur in months following high sentiment. Hypothesis 3 Sentiment does not greatly affect returns on the long-leg portfolio. None of the 11 long legs exhibits a significantdifference between high- and low-sentiment periods Data BW 2006 sentiment Index 11 anomalies VW within decile Empirical ResultsSentiment and returns High-Sentiment: BW in the previous month &gt; median Table 3 t-stat for FF3-adjusted return Long leg HIgh sentiment Low sentiment H-L Short leg L/S Table 8 Predictive Regression FF3+BW Index on Return/Spreads FF-3+Sentiment+Macro Control]]></content>
+      <categories>
+        <category>Paper Review</category>
+      </categories>
+      <tags>
+        <tag>Empirical Asset Pricing</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Summarize Factor Momentum Everywhere]]></title>
     <url>%2F2019%2F03%2F05%2FSummarize%20Factor%20Momentum%20Everywhere%2F</url>
-    <content type="text"><![CDATA[Summary Factor Momentum exists. FM Portfolio works. 1-1 is still Momentum. Global works. Data 65 characteristic-based factor portfolio since 1960 preprocessing winsorize 1% 2*3 within group VW monthly NYSE median mkt cap cutoff factor 30/40/30 [(LH+SH)-(LL+SL)]/2 Factors Value factor exposure size investment Profitbability Risk Liqudity Factor Momentum1. Factor Persistence AR(1) coef 50/65 &gt; market 2. Time-Series Factor Momentum Similar to 2012 AQR’s TS Momentum Volatility Scaling lookback &lt; 12, 3 year vol otherwise, 10 year vol one month TSFM return = Factor Return * signal signal is total return given lookback window scaled by vol Cap signal between -2 and 2 Assesment Sharpe EW Factor alpha FF5 alpha Overall TSFM TSFM_{W} = TSFM_{W}^L-TSFM_{W}^S \\ TSFM_{W,t}^L = \frac{\sum_i{1^Lf_{i,W,t+1}^{TSFM}}}{\sum_i1^Ls_{i,W,t}} 3. Compared with Other Mom Exhibit 7 Correlation 1-1 CSFM/TSFM vs STR -0.8 (Not stock -level reversal!) 2-12 0.75 (Momentum!) Exhibit 8 TSFM more effective UMD only explains 2-12 TSFM CSFM more correlated with UMD and INDMOM]]></content>
+    <content type="text"><![CDATA[Summary Factor Momentum exists. FM Portfolio works. 1-1 is still Momentum. Global works. Data 65 characteristic-based factor portfolio since 1960 preprocessing winsorize 1% 2*3 within group VW monthly NYSE median mkt cap cutoff factor 30/40/30 [(LH+SH)-(LL+SL)]/2 Factors Value factor exposure size investment Profitbability Risk Liqudity Factor Momentum1. Factor Persistence AR(1) coef 50/65 &gt; market 2. Time-Series Factor Momentum Similar to 2012 AQR’s TS Momentum Volatility Scaling lookback &lt; 12, 3 year vol otherwise, 10 year vol one month TSFM return = Factor Return * signal signal is total return given lookback window scaled by vol Cap signal between -2 and 2 Assesment Sharpe EW Factor alpha FF5 alpha Overall TSFMTSFM_{W} = TSFM_{W}^L-TSFM_{W}^S \\ TSFM_{W,t}^L = \frac{\sum_i{1^Lf_{i,W,t+1}^{TSFM}}}{\sum_i1^Ls_{i,W,t}} 3. Compared with Other Mom Exhibit 7 Correlation 1-1 CSFM/TSFM vs STR -0.8 (Not stock -level reversal!) 2-12 0.75 (Momentum!) Exhibit 8 TSFM more effective UMD only explains 2-12 TSFM CSFM more correlated with UMD and INDMOM]]></content>
       <categories>
         <category>Paper Review</category>
       </categories>

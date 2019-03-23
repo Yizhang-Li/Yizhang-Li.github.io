@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yizhang-li.github.io./"/>
-  <updated>2019-03-14T19:46:02.204Z</updated>
+  <updated>2019-03-23T00:04:24.988Z</updated>
   <id>http://yizhang-li.github.io./</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Notes on How to Win a Data Science Competition</title>
+    <link href="http://yizhang-li.github.io./2019/03/22/Notes%20How%20to%20Win%20a%20Data%20Science%20Competition/"/>
+    <id>http://yizhang-li.github.io./2019/03/22/Notes How to Win a Data Science Competition/</id>
+    <published>2019-03-22T12:05:00.000Z</published>
+    <updated>2019-03-23T00:04:24.988Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Feature-preprocessing&quot;&gt;&lt;a href=&quot;#Feature-preprocessing&quot; class=&quot;headerlink&quot; title=&quot;Feature preprocessing&quot;&gt;&lt;/a&gt;Feature preprocessing&lt;/
+      
+    
+    </summary>
+    
+      <category term="Notes" scheme="http://yizhang-li.github.io./categories/Notes/"/>
+    
+    
+      <category term="Machine Learning" scheme="http://yizhang-li.github.io./tags/Machine-Learning/"/>
+    
+      <category term="Data Mining" scheme="http://yizhang-li.github.io./tags/Data-Mining/"/>
+    
+      <category term="Notes" scheme="http://yizhang-li.github.io./tags/Notes/"/>
+    
+  </entry>
   
   <entry>
     <title>Summarize The Long of it</title>

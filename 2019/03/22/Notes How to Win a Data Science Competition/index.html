@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Machine Learning,Data Mining,Notes,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Yizhang Li" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Feature preprocessing0. Missing Values EDA    Treating values which do not present in train data  Cat data Frequency Encoding   Refill NaN Xgboost can handle that      1. Categorical and Ordinal Featu">
+<meta name="keywords" content="Machine Learning,Data Mining,Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notes on How to Win a Data Science Competition">
+<meta property="og:url" content="http://yizhang-li.github.io./2019/03/22/Notes How to Win a Data Science Competition/index.html">
+<meta property="og:site_name" content="Yizhang Li">
+<meta property="og:description" content="Feature preprocessing0. Missing Values EDA    Treating values which do not present in train data  Cat data Frequency Encoding   Refill NaN Xgboost can handle that      1. Categorical and Ordinal Featu">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://i.loli.net/2019/03/21/5c931f68d19bb.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/21/5c9326770bbfd.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/03/22/5c941db6677c6.png">
+<meta property="og:image" content="c:/Users/Yizhang%20Li/Blog/blog/source/_posts/pics/How_to_win4.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/22/5c94228459bbb.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/22/5c9425112488d.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/23/5c954aaa64806.png">
+<meta property="og:updated_time" content="2019-03-23T00:04:24.988Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Notes on How to Win a Data Science Competition">
+<meta name="twitter:description" content="Feature preprocessing0. Missing Values EDA    Treating values which do not present in train data  Cat data Frequency Encoding   Refill NaN Xgboost can handle that      1. Categorical and Ordinal Featu">
+<meta name="twitter:image" content="https://i.loli.net/2019/03/21/5c931f68d19bb.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yizhang-li.github.io./2019/03/22/Notes How to Win a Data Science Competition/">
+
+
+
+
+
+  <title>Notes on How to Win a Data Science Competition | Yizhang Li</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-132763446-1', 'auto');
+  ga('send', 'pageview');
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Yizhang Li</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yizhang-li.github.io./2019/03/22/Notes How to Win a Data Science Competition/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yizhang Li">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yizhang Li">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Notes on How to Win a Data Science Competition</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-22T20:05:00+08:00">
+                2019-03-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-03-23T08:04:24+08:00">
+                2019-03-23
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/22/Notes How to Win a Data Science Competition/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/22/Notes How to Win a Data Science Competition/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Feature-preprocessing"><a href="#Feature-preprocessing" class="headerlink" title="Feature preprocessing"></a>Feature preprocessing</h2><h3 id="0-Missing-Values"><a href="#0-Missing-Values" class="headerlink" title="0. Missing Values"></a>0. Missing Values</h3><ul>
+<li>EDA</li>
+</ul>
+<p><a href="https://i.loli.net/2019/03/21/5c931f68d19bb.png" target="_blank" rel="noopener"><img src="https://i.loli.net/2019/03/21/5c931f68d19bb.png" alt="How_to_win1.png"></a></p>
+<ul>
+<li>Treating values which do not present in train data <ul>
+<li>Cat data<ul>
+<li>Frequency Encoding</li>
+</ul>
+</li>
+<li>Refill NaN<ul>
+<li>Xgboost can handle that</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-Categorical-and-Ordinal-Features"><a href="#1-Categorical-and-Ordinal-Features" class="headerlink" title="1. Categorical and Ordinal Features"></a>1. Categorical and Ordinal Features</h3><ul>
+<li><p><a href="https://zhuanlan.zhihu.com/p/40231966?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=59333568102400" target="_blank" rel="noopener">Kaggle categorical feature Recap</a></p>
+<ul>
+<li>Target Encoding (2-Levels CV)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">n_folds = <span class="number">20</span></span><br><span class="line">n_inner_folds = <span class="number">10</span></span><br><span class="line">likelihood_encoded = pd.Series()</span><br><span class="line">likelihood_coding_map = &#123;&#125;</span><br><span class="line"></span><br><span class="line">oof_default_mean = train[target].mean()      <span class="comment"># global prior mean</span></span><br><span class="line">kf = KFold(n_splits=n_folds, shuffle=<span class="keyword">True</span>)</span><br><span class="line">oof_mean_cv = pd.DataFrame()</span><br><span class="line">split = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> infold, oof <span class="keyword">in</span> kf.split(train[feature]):</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'==============level 1 encoding..., fold %s ============'</span> % split)</span><br><span class="line">    inner_kf = KFold(n_splits=n_inner_folds, shuffle=<span class="keyword">True</span>)</span><br><span class="line">    inner_oof_default_mean = train.iloc[infold][target].mean()</span><br><span class="line">    inner_split = <span class="number">0</span></span><br><span class="line">    inner_oof_mean_cv = pd.DataFrame()</span><br><span class="line"></span><br><span class="line">    likelihood_encoded_cv = pd.Series()</span><br><span class="line">    <span class="keyword">for</span> inner_infold, inner_oof <span class="keyword">in</span> inner_kf.split(train.iloc[infold]):</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'==============level 2 encoding..., inner fold %s ============'</span> % inner_split)</span><br><span class="line">        <span class="comment"># inner out of fold mean</span></span><br><span class="line">        oof_mean = train.iloc[inner_infold].groupby(by=feature)[target].mean()</span><br><span class="line">        <span class="comment"># assign oof_mean to the infold</span></span><br><span class="line">        likelihood_encoded_cv = likelihood_encoded_cv.append(train.iloc[infold].apply(</span><br><span class="line">            <span class="keyword">lambda</span> x : oof_mean[x[feature]]</span><br><span class="line">            <span class="keyword">if</span> x[feature] <span class="keyword">in</span> oof_mean.index</span><br><span class="line">            <span class="keyword">else</span> inner_oof_default_mean, axis = <span class="number">1</span>))</span><br><span class="line">        inner_oof_mean_cv = inner_oof_mean_cv.join(pd.DataFrame(oof_mean), rsuffix=inner_split, how=<span class="string">'outer'</span>)</span><br><span class="line">        inner_oof_mean_cv.fillna(inner_oof_default_mean, inplace=<span class="keyword">True</span>)</span><br><span class="line">        inner_split += <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    oof_mean_cv = oof_mean_cv.join(pd.DataFrame(inner_oof_mean_cv), rsuffix=split, how=<span class="string">'outer'</span>)</span><br><span class="line">    oof_mean_cv.fillna(value=oof_default_mean, inplace=<span class="keyword">True</span>)</span><br><span class="line">    split += <span class="number">1</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'============final mapping...==========='</span>)</span><br><span class="line">    likelihood_encoded = likelihood_encoded.append(train.iloc[oof].apply(</span><br><span class="line">        <span class="keyword">lambda</span> x: np.mean(inner_oof_mean_cv.loc[x[feature]].values)</span><br><span class="line">        <span class="keyword">if</span> x[feature] <span class="keyword">in</span> inner_oof_mean_cv.index</span><br><span class="line">        <span class="keyword">else</span> oof_default_mean, axis=<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">######################################### map into test dataframe</span></span><br><span class="line">train[feature] = likelihood_encoded</span><br><span class="line">likelihood_coding_mapping = oof_mean_cv.mean(axis = <span class="number">1</span>)</span><br><span class="line">default_coding = oof_default_mean</span><br><span class="line"></span><br><span class="line">likelihood_coding_map[feature] = (likelihood_coding_mapping, default_coding)</span><br><span class="line">mapping, default_mean = likelihood_coding_map[feature]</span><br><span class="line">test[feature] = test.apply(<span class="keyword">lambda</span> x : mapping[x[feature]]</span><br><span class="line">                                       <span class="keyword">if</span> x[feature] <span class="keyword">in</span> mapping</span><br><span class="line">                                       <span class="keyword">else</span> default_mean,axis = <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p><a href="https://i.loli.net/2019/03/21/5c9326770bbfd.jpg" target="_blank" rel="noopener"><img src="https://i.loli.net/2019/03/21/5c9326770bbfd.jpg" alt="How_to_win2.jpg"></a></p>
+<ul>
+<li>Reference<ul>
+<li><a href="https://www.kaggle.com/tnarik/likelihood-encoding-of-categorical-features" target="_blank" rel="noopener">Winner Solution</a></li>
+<li><a href="https://github.com/scikit-learn-contrib/categorical-encoding" target="_blank" rel="noopener">sklearn plugin</a></li>
+</ul>
+</li>
+<li>BETA Target Encoding</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-Numeric-Features"><a href="#2-Numeric-Features" class="headerlink" title="2. Numeric Features"></a>2. Numeric Features</h3><ul>
+<li>Non-tree-based models hugely depend on scaling </li>
+</ul>
+<h3 id="3-DT-and-Coordinates"><a href="#3-DT-and-Coordinates" class="headerlink" title="3. DT and Coordinates"></a>3. DT and Coordinates</h3><ul>
+<li>DT<ul>
+<li>Periodicity<ul>
+<li>Day number</li>
+</ul>
+</li>
+<li>Time Since</li>
+<li>DT Delta</li>
+</ul>
+</li>
+<li>Coodinates<ul>
+<li>Distance to interesting places</li>
+<li>Distance to centers of cluster</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-Text-and-Images"><a href="#4-Text-and-Images" class="headerlink" title="4. Text and Images"></a>4. Text and Images</h3><ul>
+<li>Text<ul>
+<li>BOW</li>
+<li>N-gram</li>
+<li>Embedding</li>
+</ul>
+</li>
+</ul>
+<h2 id="EDA"><a href="#EDA" class="headerlink" title="EDA"></a>EDA</h2><h3 id="0-Motivating-Example"><a href="#0-Motivating-Example" class="headerlink" title="0. Motivating Example"></a>0. Motivating Example</h3><ul>
+<li><strong>Do not start with stacking!</strong></li>
+<li>Promotion Prediction Magic feature<ul>
+<li>Example<ul>
+<li>Data<ul>
+<li>Number of promos sent</li>
+<li>Number of promos used</li>
+<li>id</li>
+</ul>
+</li>
+<li>Group by id and sorted by sent, then take difference</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Check intuitive <ul>
+<li>Type<ul>
+<li>age 336?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-Understand-how-the-data-was-generated"><a href="#1-Understand-how-the-data-was-generated" class="headerlink" title="1. Understand how the data was generated"></a>1. Understand how the data was generated</h3><ul>
+<li>Crucial for validation setting</li>
+<li>Ad Competition Example<ul>
+<li>Problem (train/test data generated by different algo)<ul>
+<li>Improve on validation does not improve LB</li>
+<li>LB metric much higher than train</li>
+</ul>
+</li>
+<li>Findings<ul>
+<li>Much more days in train, but less sample than test</li>
+<li>Training set is at least 1 impression</li>
+<li>Test set is all id</li>
+<li>Training is biased because lack of 0 impression</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-Anonymized-data"><a href="#2-Anonymized-data" class="headerlink" title="2. Anonymized data"></a>2. Anonymized data</h3><ul>
+<li>Guess Types<ul>
+<li>Different types, different methods</li>
+</ul>
+</li>
+<li>Guess Meaning<ul>
+<li>Date Example</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-Visualization"><a href="#3-Visualization" class="headerlink" title="3. Visualization"></a>3. Visualization</h3><ul>
+<li>Explore Individual Feature<ul>
+<li>Drop Var=0 features</li>
+<li>Single plot is misleading<ul>
+<li>Hist, and take log<ul>
+<li>check if missing values has been filled</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Index versus value plot<ul>
+<li>check shuffle or not?</li>
+<li>check classification ability</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://i.loli.net/2019/03/22/5c941db6677c6.png" target="_blank" rel="noopener"><img src="https://i.loli.net/2019/03/22/5c941db6677c6.png" alt="How_to_win3.png"></a></p>
+<ul>
+<li><p>Explore feature relations</p>
+<ul>
+<li>scatter plot on two features with color specified by Label<ul>
+<li>check areas covered by test samples</li>
+</ul>
+</li>
+</ul>
+<p><img src="C:\Users\Yizhang Li\Blog\blog\source\_posts\pics\How_to_win4.png" alt=""></p>
+<ul>
+<li><p>Feature Group</p>
+<ul>
+<li>plt.matshow()<ul>
+<li>clustering correlation</li>
+<li>cluster features</li>
+</ul>
+</li>
+<li>Feature stats versus Feature Index sorted by values<ul>
+<li>df.mean().sort_values().plot(style = ‘.’)</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://i.loli.net/2019/03/22/5c94228459bbb.png" target="_blank" rel="noopener"><img src="https://i.loli.net/2019/03/22/5c94228459bbb.png" alt="How_to_win5.png"></a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-Other-things-to-check"><a href="#4-Other-things-to-check" class="headerlink" title="4. Other things to check"></a>4. Other things to check</h3><ul>
+<li><p>Data Cleaning</p>
+<ul>
+<li>Constant/Duplicated features<ul>
+<li>df.nunique()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Samples</p>
+<ul>
+<li>Duplicated Rows<ul>
+<li>have same label or not?<ul>
+<li>why?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>if shuffled<ul>
+<li>rolling target versus global target</li>
+<li>number of NAN per row </li>
+</ul>
+</li>
+</ul>
+<p><a href="https://i.loli.net/2019/03/22/5c9425112488d.png" target="_blank" rel="noopener"><img src="https://i.loli.net/2019/03/22/5c9425112488d.png" alt="How_to_win6.png"></a></p>
+</li>
+</ul>
+<h2 id="Validation-and-Overfitting"><a href="#Validation-and-Overfitting" class="headerlink" title="Validation and Overfitting"></a>Validation and Overfitting</h2><h3 id="1-Validation-Strategies"><a href="#1-Validation-Strategies" class="headerlink" title="1. Validation Strategies"></a>1. Validation Strategies</h3><ul>
+<li>Check duplicated rows/id for train-validation split</li>
+<li>Types<ul>
+<li>Holdout</li>
+<li>K-fold<ul>
+<li>Estimate mean and variance of the loss<ul>
+<li>helpful to understand significant of improvement</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>LOOCV</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> ShuffleSplit,Kfold,LeaveOneOut</span><br></pre></td></tr></table></figure>
+<h3 id="2-Splitting-Strategies"><a href="#2-Splitting-Strategies" class="headerlink" title="2. Splitting Strategies"></a>2. Splitting Strategies</h3><ul>
+<li>Time-based splits</li>
+</ul>
+<ul>
+<li>By id</li>
+<li>Random Split</li>
+</ul>
+<h3 id="3-Common-Validation-Problems"><a href="#3-Common-Validation-Problems" class="headerlink" title="3. Common Validation Problems"></a>3. Common Validation Problems</h3><ul>
+<li>Validation Stage (big dispersion of scores on validation stage)<ul>
+<li>Cause of different scores/parameters<ul>
+<li>little data</li>
+<li>diverse and inconsistant</li>
+</ul>
+</li>
+<li><strong>Actions</strong> (more thorough validation)<ul>
+<li>Average scores from more different KFolds</li>
+<li>Tube model on one split, evaluate score on the other</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Submission Stage<ul>
+<li>Ensure same distribution</li>
+</ul>
+</li>
+<li>LB shuffle<ul>
+<li>Randomness (Two Sigma)/Little data/Different distribution</li>
+</ul>
+</li>
+<li><a href="https://scikit-learn.org/stable/modules/cross_validation.html" target="_blank" rel="noopener">sklearn validation</a></li>
+</ul>
+<h2 id="Data-Leakages"><a href="#Data-Leakages" class="headerlink" title="Data Leakages"></a>Data Leakages</h2><h3 id="1-Basic-Leaks"><a href="#1-Basic-Leaks" class="headerlink" title="1. Basic Leaks"></a>1. Basic Leaks</h3><ul>
+<li>Leaks in time series</li>
+<li>Unexpected information<ul>
+<li>Meta Data</li>
+<li>Information in ID</li>
+<li>Row Order</li>
+</ul>
+</li>
+<li><strong>Leaderboard Probing</strong></li>
+</ul>
+<h2 id="Metrics-Optimization"><a href="#Metrics-Optimization" class="headerlink" title="Metrics Optimization"></a>Metrics Optimization</h2><h3 id="1-Regression"><a href="#1-Regression" class="headerlink" title="1. Regression"></a>1. Regression</h3><ul>
+<li>MAE for outliers (Median)</li>
+<li>MSE, RMSE and R2 are the same</li>
+<li>Weighted version</li>
+</ul>
+<script type="math/tex; mode=display">
+MSPE = \frac{100%}{N}\sum_{i=1}^N{(1-\hat{y}^i/y)^2} \\
+MAPE = \frac{100%}{N}\sum_{i=1}^N{|1-\hat{y}^i/y|}</script><ul>
+<li>Asymmetric RMSLE</li>
+</ul>
+<script type="math/tex; mode=display">
+MSLE = \frac{1}{N}\sum_{i=1}^N(log(y_i+1)-log(\hat{y_i}+1))^2</script><h3 id="2-Classification-Metrics"><a href="#2-Classification-Metrics" class="headerlink" title="2. Classification Metrics"></a>2. Classification Metrics</h3><ul>
+<li>Logloss plog(ph)</li>
+<li>AUC</li>
+<li>Kappa</li>
+</ul>
+<script type="math/tex; mode=display">
+Cohen's \ Kappa=1-\frac{1-acc}{1-p_{benchmark}}</script><h3 id="3-General-Tricks"><a href="#3-General-Tricks" class="headerlink" title="3. General Tricks"></a>3. General Tricks</h3><ul>
+<li><p>Preprocess (MSPE/MAPE/MSLE)</p>
+<ul>
+<li>tricks<ul>
+<li>transform target</li>
+<li>set sample weights in lib</li>
+<li>df.sample() to fit a new model (xgboost)</li>
+</ul>
+</li>
+<li>MSPE as weighted MSE</li>
+</ul>
+<script type="math/tex; mode=display">
+w_i = \frac{1/y_i^2}{\sum_{i=1}^N1/y^2_i}</script></li>
+</ul>
+<ul>
+<li><p>MAPE as weighted MAE</p>
+<script type="math/tex; mode=display">
+w_i = \frac{1/y_i}{\sum_{i=1}^N1/yi}</script></li>
+</ul>
+<ul>
+<li><p>Postprocess(Acc/Kappa)</p>
+<ul>
+<li>Probability Calibration when not directly opt loss<ul>
+<li>stacking for logloss<ul>
+<li>Platt scaling (logistic on predictions)</li>
+<li><a href="http://danielnee.com/tag/isotonic-regression/" target="_blank" rel="noopener">Isotonic regression</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>For accuracy<ul>
+<li>Fit any metric and tune threshold</li>
+</ul>
+</li>
+<li>For auc<ul>
+<li>pairwise loss in xgboost/lgbm</li>
+</ul>
+</li>
+<li>For quadratric weighted Kappa<ul>
+<li>Optimize MSE and find grid search threshold</li>
+<li><a href="https://arxiv.org/abs/1509.07107" target="_blank" rel="noopener">Soft Kappa Loss for xgboost</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Custom Loss Function </p>
+<ul>
+<li>Hubor Loss for MAE in xgboost </li>
+</ul>
+</li>
+<li><p>Early stopping</p>
+<ul>
+<li>Stop when M2 is best</li>
+</ul>
+</li>
+</ul>
+<h2 id="Target-Encodings-Details"><a href="#Target-Encodings-Details" class="headerlink" title="Target Encodings Details"></a>Target Encodings Details</h2><h3 id="1-Ways-to-target"><a href="#1-Ways-to-target" class="headerlink" title="1. Ways to target"></a>1. Ways to target</h3><ul>
+<li>Likelihood = mean(target)</li>
+<li>Weight of Evidence = In(Goods/Bads)</li>
+<li>Count = sum(target)</li>
+<li>Diff=Goods-Bads</li>
+</ul>
+<h3 id="2-Regularization"><a href="#2-Regularization" class="headerlink" title="2. Regularization"></a>2. Regularization</h3><ul>
+<li>CV Loop</li>
+<li>Noise</li>
+<li>Smoothing</li>
+</ul>
+<h3 id="3-Extension-to-regression-multi-class"><a href="#3-Extension-to-regression-multi-class" class="headerlink" title="3. Extension to regression/multi-class"></a>3. Extension to regression/multi-class</h3><ul>
+<li>More stats for regression<ul>
+<li>Distribution Bins<ul>
+<li>Bin numeric features and treat as cat data</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Mean Encoding for numeric features</strong><ul>
+<li>Start with raw numeric features in xgboost</li>
+<li>If lot of splits<ul>
+<li>use splits to bin features and encode them</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Mean Encoding for cat interaction features</strong><ul>
+<li>Start with raw cat features in xgboost</li>
+<li>Count feature pairs interact in a tree </li>
+</ul>
+</li>
+</ul>
+<p><a href="https://i.loli.net/2019/03/23/5c954aaa64806.png" target="_blank" rel="noopener"><img src="https://i.loli.net/2019/03/23/5c954aaa64806.png" alt="How_to_win7.png"></a></p>
+<h2 id="Advanced-Features"><a href="#Advanced-Features" class="headerlink" title="Advanced Features"></a>Advanced Features</h2><h3 id="1-Distanced-Based-Features"><a href="#1-Distanced-Based-Features" class="headerlink" title="1. Distanced-Based Features"></a>1. Distanced-Based Features</h3><ul>
+<li><p>Example</p>
+<ul>
+<li>Mean encoding all variables<ul>
+<li>need not to worry about scaling</li>
+</ul>
+</li>
+<li>For every sample, find top 2000 neighbors using Bray-Curtis metric</li>
+</ul>
+<script type="math/tex; mode=display">
+Bray-Curtis = \frac{|u-v|_1}{|u+v|_1}</script><ul>
+<li>Generate Features<ul>
+<li>Mean target of nearest 5,10,500 </li>
+<li>Mean distance to top 10 closest</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-Matrix-Factorizations"><a href="#2-Matrix-Factorizations" class="headerlink" title="2. Matrix Factorizations"></a>2. Matrix Factorizations</h3><ul>
+<li><p>SVD/PCA </p>
+</li>
+<li><p>Truncated SVD with sparse matrics</p>
+</li>
+<li><p>Non-negative Matrix Factorization </p>
+<ul>
+<li>good for counts data</li>
+</ul>
+</li>
+<li><p><strong>Fit on the whole data set!</strong></p>
+</li>
+</ul>
+<h3 id="3-Feature-Interactions"><a href="#3-Feature-Interactions" class="headerlink" title="3. Feature Interactions"></a>3. Feature Interactions</h3><ul>
+<li><a href="http://projects.rajivshah.com/blog/2016/08/01/xgbfi/" target="_blank" rel="noopener">Xgbfi</a></li>
+</ul>
+<h2 id="Ensemble"><a href="#Ensemble" class="headerlink" title="Ensemble"></a>Ensemble</h2><h3 id="1-1st-Level-tips"><a href="#1-1st-Level-tips" class="headerlink" title="1. 1st Level tips"></a>1. 1st Level tips</h3><ul>
+<li>Diversity based on algorithm</li>
+<li>Diversity based on input</li>
+</ul>
+<h3 id="2-Subsequent-Level-tips"><a href="#2-Subsequent-Level-tips" class="headerlink" title="2. Subsequent Level tips"></a>2. Subsequent Level tips</h3><ul>
+<li>Make shallower</li>
+<li><a href="https://github.com/h2oai/pystacknet" target="_blank" rel="noopener">Stacknet</a></li>
+</ul>
+<h2 id="Details-on-Catboost"><a href="#Details-on-Catboost" class="headerlink" title="Details on Catboost"></a>Details on Catboost</h2><h3 id="1-Cat-Data"><a href="#1-Cat-Data" class="headerlink" title="1. Cat Data"></a>1. Cat Data</h3><ul>
+<li>One-hot (one_hot_max_size) default</li>
+<li>Freq Labeling</li>
+<li>Statistics Labeling</li>
+<li>Consider combinations in a greedy way</li>
+</ul>
+<h2 id="Hyper-parameter-tuning"><a href="#Hyper-parameter-tuning" class="headerlink" title="Hyper-parameter tuning"></a>Hyper-parameter tuning</h2><h3 id="1-Basic-Models-Tuning-Methods"><a href="#1-Basic-Models-Tuning-Methods" class="headerlink" title="1. Basic Models Tuning Methods"></a>1. Basic Models Tuning Methods</h3><ul>
+<li><a href="Xgboost/Lightgbm">Xgboost/Lightgbm</a><ul>
+<li><strong>min_child_weight</strong>!</li>
+<li>eta/num_round<ul>
+<li>eta divided by alpha</li>
+<li>num_round multiplied by alpha</li>
+</ul>
+</li>
+<li><strong>use different seed check robustness</strong></li>
+<li>if using early stopping, no need to tune number of iterations</li>
+</ul>
+</li>
+<li>Random Forest/Extra Trees<ul>
+<li>N_estimators the higher, the better</li>
+<li>max_depth start with 7</li>
+<li>random_state as seed</li>
+</ul>
+</li>
+<li>NN<ul>
+<li>Opt Algo<ul>
+<li>SGD+Momentum</li>
+<li>Adam/Adadelta/Adagrad<ul>
+<li>faster training</li>
+<li>more overfitting</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Batch Size star with 32/64</li>
+<li>Regularization<ul>
+<li>Static dropconnect<ul>
+<li>Start with 4096 first layer</li>
+<li>Fix 99% of the first layer to be dropped during training</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-Tips"><a href="#2-Tips" class="headerlink" title="2. Tips"></a>2. Tips</h3><ul>
+<li>Don’t spend too much time!</li>
+<li>Average everything<ul>
+<li>over seed</li>
+<li><strong>over small deviations from optimal parameters</strong></li>
+</ul>
+</li>
+<li>Libs<ul>
+<li><a href="http://fastml.com/optimizing-hyperparams-with-hyperopt/" target="_blank" rel="noopener">hyperopt</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Practical-Guide"><a href="#Practical-Guide" class="headerlink" title="Practical Guide"></a>Practical Guide</h2><h3 id="1-Tips"><a href="#1-Tips" class="headerlink" title="1. Tips"></a>1. Tips</h3><ul>
+<li>Data loading<ul>
+<li>use hdf5/npy</li>
+<li>downcast to 32-bits</li>
+<li>chunks</li>
+</ul>
+</li>
+<li>Start<ul>
+<li>Read forums</li>
+<li>Begin with simple Train/Test Split </li>
+<li>EDA and Fastest Model (LGBM/RF) as a baseline<ul>
+<li>check if validation is satble</li>
+</ul>
+</li>
+<li>Add features in bulks<ul>
+<li>create all features </li>
+<li>evaluate many at once (Xgboost)</li>
+</ul>
+</li>
+<li>Debug full pipeline</li>
+<li>Only after little contribution from feature engineering/tuning single model, switch to <ul>
+<li>fully CV</li>
+<li>stacking</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="https://www.coursera.org/learn/competitive-data-science" target="_blank" rel="noopener">Course</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Yizhang Li WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Yizhang Li
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://yizhang-li.github.io./2019/03/22/Notes How to Win a Data Science Competition/" title="Notes on How to Win a Data Science Competition">http://yizhang-li.github.io./2019/03/22/Notes How to Win a Data Science Competition/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Data-Mining/" rel="tag"># Data Mining</a>
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/15/Summarize The Long of it/" rel="next" title="Summarize The Long of it">
+                <i class="fa fa-chevron-left"></i> Summarize The Long of it
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="Yizhang Li">
+            
+              <p class="site-author-name" itemprop="name">Yizhang Li</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Yizhang-Li" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liyizhang@163.sufe.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Feature-preprocessing"><span class="nav-number">1.</span> <span class="nav-text">Feature preprocessing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-Missing-Values"><span class="nav-number">1.1.</span> <span class="nav-text">0. Missing Values</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Categorical-and-Ordinal-Features"><span class="nav-number">1.2.</span> <span class="nav-text">1. Categorical and Ordinal Features</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Numeric-Features"><span class="nav-number">1.3.</span> <span class="nav-text">2. Numeric Features</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-DT-and-Coordinates"><span class="nav-number">1.4.</span> <span class="nav-text">3. DT and Coordinates</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Text-and-Images"><span class="nav-number">1.5.</span> <span class="nav-text">4. Text and Images</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EDA"><span class="nav-number">2.</span> <span class="nav-text">EDA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-Motivating-Example"><span class="nav-number">2.1.</span> <span class="nav-text">0. Motivating Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Understand-how-the-data-was-generated"><span class="nav-number">2.2.</span> <span class="nav-text">1. Understand how the data was generated</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Anonymized-data"><span class="nav-number">2.3.</span> <span class="nav-text">2. Anonymized data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Visualization"><span class="nav-number">2.4.</span> <span class="nav-text">3. Visualization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Other-things-to-check"><span class="nav-number">2.5.</span> <span class="nav-text">4. Other things to check</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Validation-and-Overfitting"><span class="nav-number">3.</span> <span class="nav-text">Validation and Overfitting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Validation-Strategies"><span class="nav-number">3.1.</span> <span class="nav-text">1. Validation Strategies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Splitting-Strategies"><span class="nav-number">3.2.</span> <span class="nav-text">2. Splitting Strategies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Common-Validation-Problems"><span class="nav-number">3.3.</span> <span class="nav-text">3. Common Validation Problems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Leakages"><span class="nav-number">4.</span> <span class="nav-text">Data Leakages</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Basic-Leaks"><span class="nav-number">4.1.</span> <span class="nav-text">1. Basic Leaks</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Metrics-Optimization"><span class="nav-number">5.</span> <span class="nav-text">Metrics Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Regression"><span class="nav-number">5.1.</span> <span class="nav-text">1. Regression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Classification-Metrics"><span class="nav-number">5.2.</span> <span class="nav-text">2. Classification Metrics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-General-Tricks"><span class="nav-number">5.3.</span> <span class="nav-text">3. General Tricks</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Target-Encodings-Details"><span class="nav-number">6.</span> <span class="nav-text">Target Encodings Details</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Ways-to-target"><span class="nav-number">6.1.</span> <span class="nav-text">1. Ways to target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Regularization"><span class="nav-number">6.2.</span> <span class="nav-text">2. Regularization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Extension-to-regression-multi-class"><span class="nav-number">6.3.</span> <span class="nav-text">3. Extension to regression/multi-class</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-Features"><span class="nav-number">7.</span> <span class="nav-text">Advanced Features</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Distanced-Based-Features"><span class="nav-number">7.1.</span> <span class="nav-text">1. Distanced-Based Features</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Matrix-Factorizations"><span class="nav-number">7.2.</span> <span class="nav-text">2. Matrix Factorizations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Feature-Interactions"><span class="nav-number">7.3.</span> <span class="nav-text">3. Feature Interactions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ensemble"><span class="nav-number">8.</span> <span class="nav-text">Ensemble</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1st-Level-tips"><span class="nav-number">8.1.</span> <span class="nav-text">1. 1st Level tips</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Subsequent-Level-tips"><span class="nav-number">8.2.</span> <span class="nav-text">2. Subsequent Level tips</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Details-on-Catboost"><span class="nav-number">9.</span> <span class="nav-text">Details on Catboost</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Cat-Data"><span class="nav-number">9.1.</span> <span class="nav-text">1. Cat Data</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hyper-parameter-tuning"><span class="nav-number">10.</span> <span class="nav-text">Hyper-parameter tuning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Basic-Models-Tuning-Methods"><span class="nav-number">10.1.</span> <span class="nav-text">1. Basic Models Tuning Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Tips"><span class="nav-number">10.2.</span> <span class="nav-text">2. Tips</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Practical-Guide"><span class="nav-number">11.</span> <span class="nav-text">Practical Guide</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Tips"><span class="nav-number">11.1.</span> <span class="nav-text">1. Tips</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Links"><span class="nav-number">12.</span> <span class="nav-text">Links</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yizhang Li</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'tYbadbTOR5URFs3789w0G447-MdYXbMMI',
+        appKey: 'GJVJjsAjyUEPdytTwHLbbC6q',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>

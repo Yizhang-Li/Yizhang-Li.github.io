@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yizhang-li.github.io./"/>
-  <updated>2019-03-29T07:22:12.386Z</updated>
+  <updated>2019-03-29T17:18:17.128Z</updated>
   <id>http://yizhang-li.github.io./</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Summarize Investor Sentiment and the Cross-Section of Stock Returns</title>
+    <link href="http://yizhang-li.github.io./2019/03/29/Summarize%20Investor%20Sentiment%20and%20the%20Cross-Section/"/>
+    <id>http://yizhang-li.github.io./2019/03/29/Summarize Investor Sentiment and the Cross-Section/</id>
+    <published>2019-03-29T05:19:00.000Z</published>
+    <updated>2019-03-29T17:18:17.128Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Theoretical-Effects-of-Sentiment&quot;&gt;&lt;a href=&quot;#Theoretical-Effects-of-Sentiment&quot; class=&quot;headerlink&quot; title=&quot;Theoretical Effects of Senti
+      
+    
+    </summary>
+    
+      <category term="Paper Review" scheme="http://yizhang-li.github.io./categories/Paper-Review/"/>
+    
+    
+      <category term="Empirical Asset Pricing" scheme="http://yizhang-li.github.io./tags/Empirical-Asset-Pricing/"/>
+    
+      <category term="Sentiment" scheme="http://yizhang-li.github.io./tags/Sentiment/"/>
+    
+  </entry>
   
   <entry>
     <title>Summarize Investor Sentiment Aligned A Powerful Predictor of Stock Returns</title>

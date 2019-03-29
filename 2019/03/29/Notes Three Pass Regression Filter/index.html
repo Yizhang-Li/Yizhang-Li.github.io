@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Notes,Statistical Modeling,">
 
 
 
@@ -81,14 +81,20 @@
 
 
 
-<meta name="keywords" content="Systematic Equity">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yizhang Li">
-<meta property="og:url" content="http://yizhang-li.github.io./tags/Machine-Learning/index.html">
+<meta name="description" content="IntroductionIntuition Model Setting Latent factors drive the systematic variation of both the forecast target, y, and the matrix of predictors X.   Problems Best prediction of y is infeasible due to l">
+<meta name="keywords" content="Notes,Statistical Modeling">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notes on Three Pass Regression Filter">
+<meta property="og:url" content="http://yizhang-li.github.io./2019/03/29/Notes Three Pass Regression Filter/index.html">
 <meta property="og:site_name" content="Yizhang Li">
+<meta property="og:description" content="IntroductionIntuition Model Setting Latent factors drive the systematic variation of both the forecast target, y, and the matrix of predictors X.   Problems Best prediction of y is infeasible due to l">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://i.loli.net/2019/03/30/5c9e7242753e5.png">
+<meta property="og:updated_time" content="2019-03-29T21:38:01.801Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yizhang Li">
+<meta name="twitter:title" content="Notes on Three Pass Regression Filter">
+<meta name="twitter:description" content="IntroductionIntuition Model Setting Latent factors drive the systematic variation of both the forecast target, y, and the matrix of predictors X.   Problems Best prediction of y is infeasible due to l">
+<meta name="twitter:image" content="https://i.loli.net/2019/03/30/5c9e7242753e5.png">
 
 
 
@@ -118,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yizhang-li.github.io./tags/Machine-Learning/">
+  <link rel="canonical" href="http://yizhang-li.github.io./2019/03/29/Notes Three Pass Regression Filter/">
 
 
 
 
 
-  <title>Tag: Machine Learning | Yizhang Li</title>
+  <title>Notes on Three Pass Regression Filter | Yizhang Li</title>
   
 
 
@@ -152,7 +158,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -288,52 +294,344 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Machine Learning<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yizhang-li.github.io./2019/03/29/Notes Three Pass Regression Filter/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yizhang Li">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yizhang Li">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/03/22/Notes How to Win a Data Science Competition/" itemprop="url">
-              
-                <span itemprop="name">Notes on How to Win a Data Science Competition</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Notes on Three Pass Regression Filter</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-22T20:05:00+08:00" content="2019-03-22">
-          03-22
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-29T17:38:00+08:00">
+                2019-03-29
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-03-30T05:38:01+08:00">
+                2019-03-30
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/Paper-Review/" itemprop="url" rel="index">
+                    <span itemprop="name">Paper Review</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/29/Notes Three Pass Regression Filter/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/29/Notes Three Pass Regression Filter/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/03/29/Notes Three Pass Regression Filter/" class="leancloud_visitors" data-flag-title="Notes on Three Pass Regression Filter">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h3 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h3><ul>
+<li>Model Setting<ul>
+<li><strong>Latent factors drive the systematic variation of both the forecast target, y, and the matrix of predictors X.</strong></li>
+</ul>
+</li>
+<li>Problems<ul>
+<li>Best prediction of y is infeasible due to latent factors.</li>
+</ul>
+</li>
+<li><p>Benchmark Two Step</p>
+<ul>
+<li>Extract factors that are significant drivers of variation in X</li>
+<li>Use extracted factors to forecast</li>
+</ul>
+</li>
+<li><p>Allow Sparsity among candidates</p>
+</li>
+</ul>
+<h2 id="The-Three-Pass-Regression-Filter"><a href="#The-Three-Pass-Regression-Filter" class="headerlink" title="The Three-Pass Regression Filter"></a>The Three-Pass Regression Filter</h2><h3 id="The-Estimator"><a href="#The-Estimator" class="headerlink" title="The Estimator"></a>The Estimator</h3><ul>
+<li><p>Notation</p>
+<ul>
+<li>$y_t, \ t=2,\cdots,T+1$</li>
+<li>$X_{T,N}​$ TS-standardized predictors</li>
+<li>$Z_{T,L}$ proxies for latent factor<ul>
+<li><strong>These are variables, driven by the factors and are always available from the target and predictors themselves!</strong><ul>
+<li>Example: Guofu zhou Aligned Index</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Model Setting</p>
+<ul>
+<li>Target is decomposed into relevant and irrelevant factors. $\beta = (\beta_f^T,0)^T$</li>
+<li>$F_t=(f_t,g_t)^T$ </li>
+</ul>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+x_t = \phi_0+\phi F_t+\epsilon_t \\ 
+y_{t+1} = \beta_0+\beta^TF_t+\eta_{t+1} \\ 
+z_t = \lambda_0+\Lambda F_t+w_t</script><ul>
+<li><p>For model assumptions and properties, please check the paper.</p>
+</li>
+<li><p>3PRF Procedure**</p>
+<p><a href="https://i.loli.net/2019/03/30/5c9e7242753e5.png" target="_blank" rel="noopener"><img src="https://i.loli.net/2019/03/30/5c9e7242753e5.png" alt="3p-1.png"></a></p>
+<ul>
+<li><p>Step 1: N separate TS-regression (predictors on proxies)</p>
+<ul>
+<li>Estimate the sensitivity of the predictor to factors represented by the proxies</li>
+<li>Assumption<ul>
+<li>Proxies’ common components span the space of the target-relevant factors.</li>
+</ul>
+</li>
+<li><strong>First-stage coefficient estimates map the cross-sectional distribution of predictors to the latent factors</strong></li>
+</ul>
+</li>
+<li><p>Step 2: T separate cross-section regression (predictors on loadings)</p>
+<ul>
+<li>Use map from Step 1 to back out estimates of the factors at each point in time</li>
+<li>Step 1&amp;2 are similar to FM-2-stage</li>
+</ul>
+</li>
+<li><p>Step 3: single forecasting TS-regression</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Empirical-Evidence"><a href="#Empirical-Evidence" class="headerlink" title="Empirical Evidence"></a>Empirical Evidence</h2><h3 id="Forecasting-Macroeconomic-Aggregates"><a href="#Forecasting-Macroeconomic-Aggregates" class="headerlink" title="Forecasting Macroeconomic Aggregates"></a>Forecasting Macroeconomic Aggregates</h3><ul>
+<li><p>Data</p>
+<ul>
+<li>108 macroeconomic variables compiled by Stock and Watson (2012) </li>
+</ul>
+</li>
+<li><p>Pseudo out-of-sample prediction</p>
+<ul>
+<li>Recursively estimate 3PRF and only use information up to t </li>
+</ul>
+</li>
+<li>OOS $R^2$</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.sciencedirect.com/science/article/pii/S0304407615000354" target="_blank" rel="noopener">paper link</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Yizhang Li WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Yizhang Li
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://yizhang-li.github.io./2019/03/29/Notes Three Pass Regression Filter/" title="Notes on Three Pass Regression Filter">http://yizhang-li.github.io./2019/03/29/Notes Three Pass Regression Filter/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/Statistical-Modeling/" rel="tag"># Statistical Modeling</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/29/Summarize Investor Sentiment and the Cross-Section/" rel="next" title="Summarize Investor Sentiment and the Cross-Section of Stock Returns">
+                <i class="fa fa-chevron-left"></i> Summarize Investor Sentiment and the Cross-Section of Stock Returns
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -341,6 +639,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -361,8 +666,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -447,6 +761,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Intuition"><span class="nav-number">1.1.</span> <span class="nav-text">Intuition</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Three-Pass-Regression-Filter"><span class="nav-number">2.</span> <span class="nav-text">The Three-Pass Regression Filter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Estimator"><span class="nav-number">2.1.</span> <span class="nav-text">The Estimator</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Empirical-Evidence"><span class="nav-number">3.</span> <span class="nav-text">Empirical Evidence</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Forecasting-Macroeconomic-Aggregates"><span class="nav-number">3.1.</span> <span class="nav-text">Forecasting Macroeconomic Aggregates</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -607,6 +937,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yizhang-li.github.io./"/>
-  <updated>2019-03-29T17:18:17.128Z</updated>
+  <updated>2019-03-29T21:38:01.801Z</updated>
   <id>http://yizhang-li.github.io./</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Notes on Three Pass Regression Filter</title>
+    <link href="http://yizhang-li.github.io./2019/03/29/Notes%20Three%20Pass%20Regression%20Filter/"/>
+    <id>http://yizhang-li.github.io./2019/03/29/Notes Three Pass Regression Filter/</id>
+    <published>2019-03-29T09:38:00.000Z</published>
+    <updated>2019-03-29T21:38:01.801Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;h3 id=&quot;Intuition&quot;&gt;&lt;a href=&quot;#Intu
+      
+    
+    </summary>
+    
+      <category term="Notes" scheme="http://yizhang-li.github.io./categories/Notes/"/>
+    
+      <category term="Paper Review" scheme="http://yizhang-li.github.io./categories/Notes/Paper-Review/"/>
+    
+    
+      <category term="Notes" scheme="http://yizhang-li.github.io./tags/Notes/"/>
+    
+      <category term="Statistical Modeling" scheme="http://yizhang-li.github.io./tags/Statistical-Modeling/"/>
+    
+  </entry>
   
   <entry>
     <title>Summarize Investor Sentiment and the Cross-Section of Stock Returns</title>
@@ -46,7 +73,7 @@
     <link href="http://yizhang-li.github.io./2019/03/29/Summarize%20Investment%20Sentiment%20Aligned/"/>
     <id>http://yizhang-li.github.io./2019/03/29/Summarize Investment Sentiment Aligned/</id>
     <published>2019-03-28T19:17:00.000Z</published>
-    <updated>2019-03-29T07:22:12.386Z</updated>
+    <updated>2019-03-29T21:26:28.917Z</updated>
     
     <summary type="html">
     
@@ -72,7 +99,7 @@
     <link href="http://yizhang-li.github.io./2019/03/25/Notes%20PLS%20Introduction/"/>
     <id>http://yizhang-li.github.io./2019/03/25/Notes PLS Introduction/</id>
     <published>2019-03-24T16:30:00.000Z</published>
-    <updated>2019-03-25T04:35:06.395Z</updated>
+    <updated>2019-03-29T21:37:13.111Z</updated>
     
     <summary type="html">
     

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yizhang-li.github.io./"/>
-  <updated>2019-03-29T21:38:01.801Z</updated>
+  <updated>2019-03-31T03:02:35.488Z</updated>
   <id>http://yizhang-li.github.io./</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Summarize Speculative Retail Trading and Asset Prices</title>
+    <link href="http://yizhang-li.github.io./2019/03/30/Summarize%20Speculative%20Retail%20Trading%20and%20Asset%20Prices/"/>
+    <id>http://yizhang-li.github.io./2019/03/30/Summarize Speculative Retail Trading and Asset Prices/</id>
+    <published>2019-03-30T14:57:00.000Z</published>
+    <updated>2019-03-31T03:02:35.488Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Following notes only sum
+      
+    
+    </summary>
+    
+      <category term="Paper Review" scheme="http://yizhang-li.github.io./categories/Paper-Review/"/>
+    
+    
+      <category term="Empirical Asset Pricing" scheme="http://yizhang-li.github.io./tags/Empirical-Asset-Pricing/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Notes on Three Pass Regression Filter</title>
     <link href="http://yizhang-li.github.io./2019/03/29/Notes%20Three%20Pass%20Regression%20Filter/"/>
     <id>http://yizhang-li.github.io./2019/03/29/Notes Three Pass Regression Filter/</id>
     <published>2019-03-29T09:38:00.000Z</published>
-    <updated>2019-03-29T21:38:01.801Z</updated>
+    <updated>2019-03-29T21:41:37.107Z</updated>
     
     <summary type="html">
     
@@ -48,7 +72,7 @@
     <link href="http://yizhang-li.github.io./2019/03/29/Summarize%20Investor%20Sentiment%20and%20the%20Cross-Section/"/>
     <id>http://yizhang-li.github.io./2019/03/29/Summarize Investor Sentiment and the Cross-Section/</id>
     <published>2019-03-29T05:19:00.000Z</published>
-    <updated>2019-03-29T17:18:17.128Z</updated>
+    <updated>2019-03-31T02:59:38.865Z</updated>
     
     <summary type="html">
     
@@ -178,7 +202,7 @@
     <link href="http://yizhang-li.github.io./2019/03/15/Summarize%20The%20Long%20of%20it/"/>
     <id>http://yizhang-li.github.io./2019/03/15/Summarize The Long of it/</id>
     <published>2019-03-14T19:47:00.000Z</published>
-    <updated>2019-03-23T01:44:50.273Z</updated>
+    <updated>2019-03-31T03:02:30.616Z</updated>
     
     <summary type="html">
     
@@ -204,7 +228,7 @@
     <link href="http://yizhang-li.github.io./2019/03/14/Summarize%20The%20Short%20of%20it/"/>
     <id>http://yizhang-li.github.io./2019/03/14/Summarize The Short of it/</id>
     <published>2019-03-14T07:01:00.000Z</published>
-    <updated>2019-03-23T01:44:50.282Z</updated>
+    <updated>2019-03-31T03:02:30.610Z</updated>
     
     <summary type="html">
     

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Notes,Machine Learning,">
 
 
 
@@ -81,14 +81,18 @@
 
 
 
-<meta name="keywords" content="Systematic Equity">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yizhang Li">
-<meta property="og:url" content="http://yizhang-li.github.io./archives/index.html">
+<meta name="description" content="1. Bayesian View for Lasso and Ridge \beta = argmax(In(\Pi_{i}p(y_i|x,\beta)p(\beta))1.1 Prior Distribution of $\beta$  Normal Distribution: Ridge Laplace Distribution: Lasso   p(\beta) = \frac{1}{2\a">
+<meta name="keywords" content="Notes,Machine Learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notes on Lasso, LARS and Stagewise Regression">
+<meta property="og:url" content="http://yizhang-li.github.io./2019/09/30/Lasso-LARS-Stagewise/index.html">
 <meta property="og:site_name" content="Yizhang Li">
+<meta property="og:description" content="1. Bayesian View for Lasso and Ridge \beta = argmax(In(\Pi_{i}p(y_i|x,\beta)p(\beta))1.1 Prior Distribution of $\beta$  Normal Distribution: Ridge Laplace Distribution: Lasso   p(\beta) = \frac{1}{2\a">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-30T15:11:17.852Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yizhang Li">
+<meta name="twitter:title" content="Notes on Lasso, LARS and Stagewise Regression">
+<meta name="twitter:description" content="1. Bayesian View for Lasso and Ridge \beta = argmax(In(\Pi_{i}p(y_i|x,\beta)p(\beta))1.1 Prior Distribution of $\beta$  Normal Distribution: Ridge Laplace Distribution: Lasso   p(\beta) = \frac{1}{2\a">
 
 
 
@@ -118,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yizhang-li.github.io./archives/">
+  <link rel="canonical" href="http://yizhang-li.github.io./2019/09/30/Lasso-LARS-Stagewise/">
 
 
 
 
 
-  <title>Archive | Yizhang Li</title>
+  <title>Notes on Lasso, LARS and Stagewise Regression | Yizhang Li</title>
   
 
 
@@ -152,7 +156,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-archive">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -288,391 +292,333 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yizhang-li.github.io./2019/09/30/Lasso-LARS-Stagewise/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yizhang Li">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yizhang Li">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">Notes on Lasso, LARS and Stagewise Regression</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-30T11:15:00-04:00">
+                2019-09-30
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-09-30T11:11:17-04:00">
+                2019-09-30
+              </time>
+            
+          </span>
+
           
-        
-        Um..! 12 posts in total. Keep on posting.
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/30/Lasso-LARS-Stagewise/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/30/Lasso-LARS-Stagewise/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2019/09/30/Lasso-LARS-Stagewise/" class="leancloud_visitors" data-flag-title="Notes on Lasso, LARS and Stagewise Regression">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/09/30/Lasso-LARS-Stagewise/" itemprop="url">
-              
-                <span itemprop="name">Notes on Lasso, LARS and Stagewise Regression</span>
-              
-            </a>
-        
-      </h2>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-30T11:15:00-04:00" content="2019-09-30">
-          09-30
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/16/Fundamentals of Value vs Growth Investing and an Explanation for the Value Trap/" itemprop="url">
-              
-                <span itemprop="name">Untitled</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-16T11:24:30-04:00" content="2019-06-16">
-          06-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/30/Summarize Speculative Retail Trading and Asset Prices/" itemprop="url">
-              
-                <span itemprop="name">Summarize Speculative Retail Trading and Asset Prices</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-30T10:57:00-04:00" content="2019-03-30">
-          03-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/29/Notes Three Pass Regression Filter/" itemprop="url">
-              
-                <span itemprop="name">Notes on Three Pass Regression Filter</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-29T05:38:00-04:00" content="2019-03-29">
-          03-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h1 id="1-Bayesian-View-for-Lasso-and-Ridge"><a href="#1-Bayesian-View-for-Lasso-and-Ridge" class="headerlink" title="1. Bayesian View for Lasso and Ridge"></a>1. Bayesian View for Lasso and Ridge</h1><script type="math/tex; mode=display">
+\beta = argmax(In(\Pi_{i}p(y_i|x,\beta)p(\beta))</script><p><strong>1.1 Prior Distribution of $\beta$</strong></p>
+<ul>
+<li>Normal Distribution: Ridge</li>
+<li>Laplace Distribution: Lasso</li>
+</ul>
+<script type="math/tex; mode=display">
+p(\beta) = \frac{1}{2\alpha}exp(-\frac{|\beta|}{\alpha})</script><h1 id="2-Forward-Selection-Stagewise-Regression-amp-LS-Boosting"><a href="#2-Forward-Selection-Stagewise-Regression-amp-LS-Boosting" class="headerlink" title="2. Forward Selection, Stagewise Regression &amp; LS Boosting"></a>2. Forward Selection, Stagewise Regression &amp; LS Boosting</h1><h2 id="2-1-Forward-Selection"><a href="#2-1-Forward-Selection" class="headerlink" title="2.1 Forward Selection"></a>2.1 Forward Selection</h2><ul>
+<li>Repeat Select feature that minimize the residuals based on previous selected features</li>
+</ul>
+<h2 id="2-2-Forward-Stagewise-Regression"><a href="#2-2-Forward-Stagewise-Regression" class="headerlink" title="2.2 Forward Stagewise Regression"></a>2.2 Forward Stagewise Regression</h2><p><strong>1. Algorithm</strong></p>
+<ul>
+<li>Step 1: Set $r = y, \beta_j = 0,1\leq j\leq d$</li>
+<li>Step 2: Select a feature $\beta_k$ with the highest correlation with r</li>
+<li>Step 3: $\beta_k = \beta_k + \delta sign(f_k^Tr)$</li>
+<li>Step 4: Residual $r = r - \delta<em>sign(f_k^Tr)</em>f_k$</li>
+<li>Step 5: Repeat 2-4</li>
+</ul>
+<p><strong>2. Properties</strong></p>
+<ul>
+<li>Less Greedy</li>
+<li>Need to set <strong>Step size</strong> and <strong>iteration rounds</strong><ul>
+<li>Large Step Size leads to OLS</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-3-LS-Boosting"><a href="#2-3-LS-Boosting" class="headerlink" title="2.3 LS Boosting"></a>2.3 LS Boosting</h2><p><strong>1. Algorithm</strong></p>
+<ul>
+<li>Step 1: Set $r = y, F(x) = 0$</li>
+<li>Step 2: fit a weak model $f(x)$ on r</li>
+<li>Step 3: $F(x) = F(x) + \delta f(x)$</li>
+<li>Step 4: Residual $r = r - \delta f(x)$</li>
+<li>Step 5: Repeat 2-4</li>
+</ul>
+<h2 id="2-4-LARS"><a href="#2-4-LARS" class="headerlink" title="2.4 LARS"></a>2.4 LARS</h2><p><strong>1. Algorithm</strong></p>
+<ul>
+<li><p>Step 1: Start with $r = y,\beta_{i=1,\cdots,p} = 0$</p>
+<ul>
+<li>Assume standardized X</li>
+</ul>
+</li>
+<li><p>Step 2: Find predictor $x_j$ most correlated with r</p>
+</li>
+<li><p>Step 3: Move $\beta_j$towards its LS coefficient $sign(corr(r,x_j))$ until some other competitor $x_k$ has as much correlation with current residual as does $x_j$</p>
+<ul>
+<li>Angle Bisector Direction</li>
+</ul>
+</li>
+<li><p>Step 4: Move ($\beta_j,\beta_k$) in the joint LS direction for ($x_j,x_k$) and Repeat 3</p>
+<ul>
+<li>If $r_k = y-X_{A_k}\beta_{A_k}$ is the current residual, then the direction for this step is</li>
+</ul>
+<script type="math/tex; mode=display">
+\delta_k=(X_{A_k}^TX_{A_k})^{-1}X_{A_k}^Tr_k \\
+\beta_{A_k} = \beta_{A_k} + \alpha \delta_k</script></li>
+<li><p>Step5: Continue in this way until all predictors have been entered.    </p>
+</li>
+</ul>
+<p><strong>2. Properties</strong></p>
+<ul>
+<li>LARS only enters “as much” of a predictor as it deserves.</li>
+</ul>
+<h1 id="3-Three-Solutions-to-Lasso"><a href="#3-Three-Solutions-to-Lasso" class="headerlink" title="3. Three Solutions to Lasso"></a>3. Three Solutions to Lasso</h1><h2 id="3-1-Close-Form-Solution"><a href="#3-1-Close-Form-Solution" class="headerlink" title="3.1 Close-Form Solution"></a>3.1 Close-Form Solution</h2><script type="math/tex; mode=display">
+\beta_j^{Lasso} = sign(\beta_j^{OLS})(|\beta_j^{OLS}-\frac{n\lambda}{2}|)</script><h2 id="3-2-LARS-LASSO-Modification"><a href="#3-2-LARS-LASSO-Modification" class="headerlink" title="3.2 LARS: LASSO Modification"></a>3.2 LARS: LASSO Modification</h2><p><strong>1. Modify Step 4 in LARS</strong></p>
+<p><strong>Step 4b: If a non-zero coefficient hits zero, drop its variable from the active set and recompute the current joint LS direction</strong></p>
+<h2 id="3-3-Coordinate-Descent"><a href="#3-3-Coordinate-Descent" class="headerlink" title="3.3 Coordinate Descent"></a>3.3 Coordinate Descent</h2><p><strong>1. Algorithm</strong></p>
+<ul>
+<li>Iteration of Single Variate LASSO</li>
+</ul>
+<ul>
+<li>Step 1: Initialize $\beta$</li>
+<li>Step 2: For k = 1:p<ul>
+<li>Min loss L($\beta_j|\beta_{-j}$)</li>
+</ul>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+L(\beta_j|\beta_{-j}) = \frac{1}{n}\sum_{i}(y_i-\sum_{s\neq k}X_{is}\beta_s-X_{ik}\beta_k)^2+\lambda |\beta_k|</script><ul>
+<li>Repeat Step 2 Until Converge</li>
+</ul>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.zhihu.com/search?type=content&amp;q=stagewise%20" target="_blank" rel="noopener">从Lasso说起</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Least-angle_regression" target="_blank" rel="noopener">LARS</a></p>
+<p><a href="https://web.stanford.edu/~hastie/Papers/ESLII.pdf" target="_blank" rel="noopener">ESL</a> </p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/29/Summarize Investor Sentiment and the Cross-Section/" itemprop="url">
-              
-                <span itemprop="name">Summarize Investor Sentiment and the Cross-Section of Stock Returns</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-29T01:19:00-04:00" content="2019-03-29">
-          03-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/28/Summarize Investment Sentiment Aligned/" itemprop="url">
-              
-                <span itemprop="name">Summarize Investor Sentiment Aligned A Powerful Predictor of Stock Returns</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-28T15:17:00-04:00" content="2019-03-28">
-          03-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/24/Notes PLS Introduction/" itemprop="url">
-              
-                <span itemprop="name">Notes on PLS</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-24T12:30:00-04:00" content="2019-03-24">
-          03-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/22/Summarize Sentiment and the Performance of TI/" itemprop="url">
-              
-                <span itemprop="name">Summarize Sentiment and the Performance of Technical Indicators</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-22T11:05:00-04:00" content="2019-03-22">
-          03-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/22/Notes How to Win a Data Science Competition/" itemprop="url">
-              
-                <span itemprop="name">Notes on How to Win a Data Science Competition</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-22T08:05:00-04:00" content="2019-03-22">
-          03-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/14/Summarize The Long of it/" itemprop="url">
-              
-                <span itemprop="name">Summarize The Long of it</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-14T15:47:00-04:00" content="2019-03-14">
-          03-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Yizhang Li WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Yizhang Li
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://yizhang-li.github.io./2019/09/30/Lasso-LARS-Stagewise/" title="Notes on Lasso, LARS and Stagewise Regression">http://yizhang-li.github.io./2019/09/30/Lasso-LARS-Stagewise/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/16/Fundamentals of Value vs Growth Investing and an Explanation for the Value Trap/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -680,6 +626,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -700,8 +653,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -786,6 +748,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Bayesian-View-for-Lasso-and-Ridge"><span class="nav-number">1.</span> <span class="nav-text">1. Bayesian View for Lasso and Ridge</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Forward-Selection-Stagewise-Regression-amp-LS-Boosting"><span class="nav-number">2.</span> <span class="nav-text">2. Forward Selection, Stagewise Regression &amp; LS Boosting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Forward-Selection"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Forward Selection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Forward-Stagewise-Regression"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Forward Stagewise Regression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-LS-Boosting"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 LS Boosting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-LARS"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 LARS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Three-Solutions-to-Lasso"><span class="nav-number">3.</span> <span class="nav-text">3. Three Solutions to Lasso</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Close-Form-Solution"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 Close-Form Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-LARS-LASSO-Modification"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 LARS: LASSO Modification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Coordinate-Descent"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 Coordinate Descent</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -946,6 +924,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

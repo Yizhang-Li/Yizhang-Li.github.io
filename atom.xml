@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yizhang-li.github.io./"/>
-  <updated>2019-03-31T03:05:22.144Z</updated>
+  <updated>2019-09-30T15:11:17.852Z</updated>
   <id>http://yizhang-li.github.io./</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Notes on Lasso, LARS and Stagewise Regression</title>
+    <link href="http://yizhang-li.github.io./2019/09/30/Lasso-LARS-Stagewise/"/>
+    <id>http://yizhang-li.github.io./2019/09/30/Lasso-LARS-Stagewise/</id>
+    <published>2019-09-30T15:15:00.000Z</published>
+    <updated>2019-09-30T15:11:17.852Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-Bayesian-View-for-Lasso-and-Ridge&quot;&gt;&lt;a href=&quot;#1-Bayesian-View-for-Lasso-and-Ridge&quot; class=&quot;headerlink&quot; title=&quot;1. Bayesian View for L
+      
+    
+    </summary>
+    
+      <category term="Notes" scheme="http://yizhang-li.github.io./categories/Notes/"/>
+    
+    
+      <category term="Notes" scheme="http://yizhang-li.github.io./tags/Notes/"/>
+    
+      <category term="Machine Learning" scheme="http://yizhang-li.github.io./tags/Machine-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yizhang-li.github.io./2019/06/16/Fundamentals%20of%20Value%20vs%20Growth%20Investing%20and%20an%20Explanation%20for%20the%20Value%20Trap/"/>
+    <id>http://yizhang-li.github.io./2019/06/16/Fundamentals of Value vs Growth Investing and an Explanation for the Value Trap/</id>
+    <published>2019-06-16T15:24:30.415Z</published>
+    <updated>2019-06-16T15:24:30.658Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Fundamentals-of-Value-vs-Growth-Investing-and-an-Explanation-for-the-Value-Trap&quot;&gt;&lt;a href=&quot;#Fundamentals-of-Value-vs-Growth-Investing
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Summarize Speculative Retail Trading and Asset Prices</title>
@@ -94,8 +138,8 @@
   
   <entry>
     <title>Summarize Investor Sentiment Aligned A Powerful Predictor of Stock Returns</title>
-    <link href="http://yizhang-li.github.io./2019/03/29/Summarize%20Investment%20Sentiment%20Aligned/"/>
-    <id>http://yizhang-li.github.io./2019/03/29/Summarize Investment Sentiment Aligned/</id>
+    <link href="http://yizhang-li.github.io./2019/03/28/Summarize%20Investment%20Sentiment%20Aligned/"/>
+    <id>http://yizhang-li.github.io./2019/03/28/Summarize Investment Sentiment Aligned/</id>
     <published>2019-03-28T19:17:00.000Z</published>
     <updated>2019-03-29T21:26:28.917Z</updated>
     
@@ -120,8 +164,8 @@
   
   <entry>
     <title>Notes on PLS</title>
-    <link href="http://yizhang-li.github.io./2019/03/25/Notes%20PLS%20Introduction/"/>
-    <id>http://yizhang-li.github.io./2019/03/25/Notes PLS Introduction/</id>
+    <link href="http://yizhang-li.github.io./2019/03/24/Notes%20PLS%20Introduction/"/>
+    <id>http://yizhang-li.github.io./2019/03/24/Notes PLS Introduction/</id>
     <published>2019-03-24T16:30:00.000Z</published>
     <updated>2019-03-29T21:37:13.111Z</updated>
     
@@ -199,8 +243,8 @@
   
   <entry>
     <title>Summarize The Long of it</title>
-    <link href="http://yizhang-li.github.io./2019/03/15/Summarize%20The%20Long%20of%20it/"/>
-    <id>http://yizhang-li.github.io./2019/03/15/Summarize The Long of it/</id>
+    <link href="http://yizhang-li.github.io./2019/03/14/Summarize%20The%20Long%20of%20it/"/>
+    <id>http://yizhang-li.github.io./2019/03/14/Summarize The Long of it/</id>
     <published>2019-03-14T19:47:00.000Z</published>
     <updated>2019-03-31T03:05:22.126Z</updated>
     

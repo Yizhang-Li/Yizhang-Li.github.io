@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Yizhang Li">
 <meta property="og:description" content="1. Bayesian View for Lasso and Ridge \beta = argmax(In(\Pi_{i}p(y_i|x,\beta)p(\beta))1.1 Prior Distribution of $\beta$  Normal Distribution: Ridge Laplace Distribution: Lasso   p(\beta) = \frac{1}{2\a">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-30T15:11:17.852Z">
+<meta property="og:updated_time" content="2019-09-30T15:24:57.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Notes on Lasso, LARS and Stagewise Regression">
 <meta name="twitter:description" content="1. Bayesian View for Lasso and Ridge \beta = argmax(In(\Pi_{i}p(y_i|x,\beta)p(\beta))1.1 Prior Distribution of $\beta$  Normal Distribution: Ridge Laplace Distribution: Lasso   p(\beta) = \frac{1}{2\a">
@@ -351,7 +351,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-09-30T11:11:17-04:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-09-30T11:24:57-04:00">
                 2019-09-30
               </time>
             
@@ -447,7 +447,7 @@ p(\beta) = \frac{1}{2\alpha}exp(-\frac{|\beta|}{\alpha})</script><h1 id="2-Forwa
 <ul>
 <li>Step 1: Set $r = y, \beta_j = 0,1\leq j\leq d$</li>
 <li>Step 2: Select a feature $\beta_k$ with the highest correlation with r</li>
-<li>Step 3: $\beta_k = \beta_k + \delta sign(f_k^Tr)$</li>
+<li>Step 3: $\beta_k = \beta_k + \delta sign(f_k^T r)$</li>
 <li>Step 4: Residual $r = r - \delta<em>sign(f_k^Tr)</em>f_k$</li>
 <li>Step 5: Repeat 2-4</li>
 </ul>

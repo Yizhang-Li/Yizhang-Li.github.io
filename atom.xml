@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yizhang-li.github.io./"/>
-  <updated>2019-09-30T15:24:57.978Z</updated>
+  <updated>2019-11-21T03:56:31.251Z</updated>
   <id>http://yizhang-li.github.io./</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Summarize Are Cross-Sectional Predictors Good Market-Level Predictors?</title>
+    <link href="http://yizhang-li.github.io./2019/11/20/Summarize%20Are%20CS%20Predictors%20Good%20Market-Level%20Predictors/"/>
+    <id>http://yizhang-li.github.io./2019/11/20/Summarize Are CS Predictors Good Market-Level Predictors/</id>
+    <published>2019-11-20T17:15:00.000Z</published>
+    <updated>2019-11-21T03:56:31.251Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-Question-Is-the-market-risk-premium-predictable-by-aggregated-CS-predictors-and-is-it-“Data-Snooping”&quot;&gt;&lt;a href=&quot;#1-Question-Is-the
+      
+    
+    </summary>
+    
+      <category term="Paper Review" scheme="http://yizhang-li.github.io./categories/Paper-Review/"/>
+    
+    
+      <category term="Predictive Regression" scheme="http://yizhang-li.github.io./tags/Predictive-Regression/"/>
+    
+      <category term="Multiple Testing" scheme="http://yizhang-li.github.io./tags/Multiple-Testing/"/>
+    
+  </entry>
   
   <entry>
     <title>Notes on Lasso, LARS and Stagewise Regression</title>

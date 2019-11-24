@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yizhang-li.github.io./"/>
-  <updated>2019-11-22T23:04:17.721Z</updated>
+  <updated>2019-11-24T05:00:45.407Z</updated>
   <id>http://yizhang-li.github.io./</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Summarize  A Seesaw Effect in the Cryptocurrency Market</title>
+    <link href="http://yizhang-li.github.io./2019/11/23/Summarize%20A%20Seesaw%20Effect%20in%20the%20Cryptocurrency%20Market/"/>
+    <id>http://yizhang-li.github.io./2019/11/23/Summarize A Seesaw Effect in the Cryptocurrency Market/</id>
+    <published>2019-11-23T05:15:00.000Z</published>
+    <updated>2019-11-24T05:00:45.407Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-Data&quot;&gt;&lt;a href=&quot;#1-Data&quot; class=&quot;headerlink&quot; title=&quot;1. Data&quot;&gt;&lt;/a&gt;1. Data&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Bitfinex 22 cryptocurrencies&lt;/li&gt;
+&lt;li&gt;2017 - 2
+      
+    
+    </summary>
+    
+      <category term="Paper Review" scheme="http://yizhang-li.github.io./categories/Paper-Review/"/>
+    
+    
+      <category term="Empirical Asset Pricing" scheme="http://yizhang-li.github.io./tags/Empirical-Asset-Pricing/"/>
+    
+      <category term="Crypto Currency" scheme="http://yizhang-li.github.io./tags/Crypto-Currency/"/>
+    
+  </entry>
   
   <entry>
     <title>Summarize Anomaly Time</title>
@@ -213,6 +240,32 @@
       <category term="Notes" scheme="http://yizhang-li.github.io./tags/Notes/"/>
     
       <category term="Statistical Modeling" scheme="http://yizhang-li.github.io./tags/Statistical-Modeling/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Materials for Econometrics Programming</title>
+    <link href="http://yizhang-li.github.io./2019/03/25/Materials%20for%20Econometrics%20Programming/"/>
+    <id>http://yizhang-li.github.io./2019/03/25/Materials for Econometrics Programming/</id>
+    <published>2019-03-25T04:30:00.000Z</published>
+    <updated>2019-11-24T02:17:17.377Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Materials&quot;&gt;&lt;a href=&quot;#Materials&quot; class=&quot;headerlink&quot; title=&quot;Materials&quot;&gt;&lt;/a&gt;Materials&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Todd A. Gormley’s Lecture Notes o
+      
+    
+    </summary>
+    
+      <category term="Notes" scheme="http://yizhang-li.github.io./categories/Notes/"/>
+    
+    
+      <category term="Notes" scheme="http://yizhang-li.github.io./tags/Notes/"/>
+    
+      <category term="Econometrics" scheme="http://yizhang-li.github.io./tags/Econometrics/"/>
     
   </entry>
   
